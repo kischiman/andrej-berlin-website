@@ -17,6 +17,30 @@
     const onScroll = () => nav.classList.toggle("condensed", window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+
+    const navToggle = nav.querySelector(".nav-toggle");
+    const mobileMenu = nav.querySelector(".mobile-menu");
+    if (navToggle && mobileMenu) {
+      const setMenu = (open) => {
+        nav.classList.toggle("menu-open", open);
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      };
+
+      navToggle.addEventListener("click", () => setMenu(!nav.classList.contains("menu-open")));
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenu(false));
+      });
+      document.addEventListener("click", (e) => {
+        if (nav.classList.contains("menu-open") && !nav.contains(e.target)) setMenu(false);
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setMenu(false);
+      });
+      window.addEventListener("resize", () => {
+        if (window.matchMedia("(min-width: 941px)").matches) setMenu(false);
+      });
+    }
   }
 
   /* ---- Scroll reveals ---- */
