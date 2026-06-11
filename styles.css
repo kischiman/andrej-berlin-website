@@ -432,10 +432,10 @@ body.loaded .scroll-cue { opacity: 1; }
 }
 
 .brand-marquee {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: clamp(8rem, 15vh, 10.5rem);
+  position: relative;
+  margin-top: clamp(2.6rem, 5vw, 3.6rem);
+  left: calc((100vw - min(1120px, calc(100vw - 48px))) / -2);
+  width: 100vw;
   z-index: 3;
   overflow: hidden;
   border-top: 1px solid var(--line);
@@ -655,6 +655,42 @@ h2 {
   color: var(--fg);
 }
 .client-feature b { color: var(--oxblood-bright); font-weight: 400; }
+.client-building {
+  display: grid;
+  grid-template-columns: minmax(9.5rem, 0.28fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+  padding-inline: clamp(2rem, 5vw, 3.4rem);
+}
+.client-building .client-tag {
+  margin: 0;
+  padding-top: 0.42rem;
+}
+.client-building p {
+  max-width: 54rem;
+}
+.client-link {
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 320ms var(--ease);
+}
+.client-link:hover { background: rgba(244, 241, 234, 0.03); }
+.client-tag {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--oxblood-bright);
+}
+.client-arrow {
+  color: var(--oxblood-bright);
+  white-space: nowrap;
+}
+.client-link:hover .client-arrow { color: var(--fg); }
+
+.button-spaced { margin-top: 2.2rem; }
 
 /* ---------- Services ---------- */
 .service-grid {
@@ -856,7 +892,6 @@ h2 {
 
 @media (max-width: 600px) {
   .brand-marquee {
-    bottom: 7.8rem;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   }
@@ -878,6 +913,13 @@ h2 {
   .client-grid,
   .service-grid,
   .quote-grid { grid-template-columns: 1fr; }
+  .client-building {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+  .client-building .client-tag {
+    padding-top: 0;
+  }
   .metric-grid { grid-template-columns: 1fr; }
   .metric:nth-child(2n) { padding-left: 0; border-left: none; }
   .metric { border-top: 1px solid var(--line); }
