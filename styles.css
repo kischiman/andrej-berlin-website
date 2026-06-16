@@ -691,6 +691,7 @@ h2 {
 .client-link:hover .client-arrow { color: var(--fg); }
 
 .button-spaced { margin-top: 2.2rem; }
+.button + .button { margin-left: 0.8rem; }
 
 /* ---------- Services ---------- */
 .service-grid {
