@@ -707,6 +707,53 @@ h2 {
   border-bottom: 1px solid var(--line);
 }
 
+/* ---------- Event Design ---------- */
+.event-copy {
+  max-width: 48rem;
+}
+.event-copy p:not(.lead):not(.pull) {
+  margin: 1.25rem 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.event-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.event-card {
+  min-height: 220px;
+  padding: 2rem 1.8rem 2.4rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.event-card h3 {
+  margin: 1rem 0 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.event-card em {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: var(--quiet);
+}
+.event-card p {
+  margin: 0.85rem 0 0;
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+.event-biotech-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 /* ---------- About ---------- */
 .about-copy { max-width: 46rem; }
 .about-copy p {
@@ -883,6 +930,8 @@ h2 {
   .principles,
   .client-grid,
   .service-grid,
+  .event-card-grid,
+  .event-biotech-grid,
   .quote-grid { grid-template-columns: repeat(2, 1fr); }
   .metric-grid { grid-template-columns: repeat(2, 1fr); gap: 0 0; }
   .metric { padding: 1.5rem 0; border-left: none; }
@@ -913,6 +962,8 @@ h2 {
   .principles,
   .client-grid,
   .service-grid,
+  .event-card-grid,
+  .event-biotech-grid,
   .quote-grid { grid-template-columns: 1fr; }
   .client-building {
     grid-template-columns: 1fr;
