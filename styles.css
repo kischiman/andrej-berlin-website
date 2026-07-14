@@ -750,10 +750,6 @@ h2 {
   font-size: 0.94rem;
   color: var(--muted);
 }
-.event-biotech-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
-
 /* ---------- About ---------- */
 .about-copy { max-width: 46rem; }
 .about-copy p {
@@ -931,7 +927,6 @@ h2 {
   .client-grid,
   .service-grid,
   .event-card-grid,
-  .event-biotech-grid,
   .quote-grid { grid-template-columns: repeat(2, 1fr); }
   .metric-grid { grid-template-columns: repeat(2, 1fr); gap: 0 0; }
   .metric { padding: 1.5rem 0; border-left: none; }
@@ -963,7 +958,6 @@ h2 {
   .client-grid,
   .service-grid,
   .event-card-grid,
-  .event-biotech-grid,
   .quote-grid { grid-template-columns: 1fr; }
   .client-building {
     grid-template-columns: 1fr;
